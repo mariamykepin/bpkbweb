@@ -3,6 +3,7 @@ namespace App\Livewire;
 
 use App\Mail\formmail;
 use Throwable;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
@@ -54,5 +55,13 @@ class Contactform extends Component
         }
 
         $this->reset();
+    }
+
+    public function index(Request $request)
+    {
+        if ($request->isMethod('POST')) {
+            return response('Handled POST request');
+        }
+        return response('Handled GET request');
     }
 }
