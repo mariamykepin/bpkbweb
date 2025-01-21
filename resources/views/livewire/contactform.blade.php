@@ -1,5 +1,6 @@
 <div class="bg-blue-50 border border-gray-300 rounded-lg p-6">
     <form wire:submit="send" method="post">
+        @csrf
         <!-- Form fields -->
         <div class="mb-4">
             <label for="nama" class="block text-sm font-semibold mb-2">Nama Lengkap:</label>
