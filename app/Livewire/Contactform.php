@@ -17,7 +17,7 @@ class Contactform extends Component
 
     protected $rules = [
         'nama' => 'required|string|max:255',
-        'NIK' => 'required|string|max:15',
+        'NIK' => 'required|string|max:16',
         'alamat' => 'required|string|max:255',
         'telepon' => 'required|numeric',
         'email' => 'required|email|max:255',
@@ -33,6 +33,10 @@ class Contactform extends Component
         $this->email = '';
     }
 
+    protected $messages = [
+        'NIK.max' => 'NIK tidak boleh lebih dari 16 karakter.',
+        'email.required' => 'Email wajib diisi.',
+    ];
         public function render()
     {
         return view('livewire.contactform');
@@ -54,14 +58,6 @@ class Contactform extends Component
             session()->flash('error', 'Gagal mengirim Data. Silakan coba lagi nanti.');
         }
 
-        $this->reset();
-    }
-
-    public function index(Request $request)
-    {
-        if ($request->isMethod('POST')) {
-            return response('Handled POST request');
-        }
-        return response('Handled GET request');
+        $this->resetForm();
     }
 }
