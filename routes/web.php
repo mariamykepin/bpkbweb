@@ -17,5 +17,5 @@ Route::post('/', function () {
 
 
 Route::any('/', function () {
-    return response('This route supports all methods.');
+    return view('welcome');
 });
