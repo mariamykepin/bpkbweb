@@ -8,4 +8,11 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    server: {
+        port: 4000,
+        cors: {
+          origin: '*', // Izinkan origin tertentu
+          methods: ['GET', 'POST', 'PUT', 'DELETE'], // Metode HTTP yang diizinkan
+        },
+    },
 });
