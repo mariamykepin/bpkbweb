@@ -11,7 +11,7 @@ Route::get('/', function () {
 Route::get('/', [Controller::class, 'welcome'])->name('welcome');
 
 
-Route::post('/', function () {
+Route::post('/welcome', function () {
     return response()->json(['message' => 'POST request handled']);
 });
 
