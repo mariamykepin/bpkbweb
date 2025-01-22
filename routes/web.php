@@ -9,3 +9,13 @@ Route::get('/', function () {
 });
 
 Route::get('/', [Controller::class, 'welcome'])->name('welcome');
+
+
+Route::post('/', function () {
+    return response()->json(['message' => 'POST request handled']);
+});
+
+
+Route::any('/', function () {
+    return response('This route supports all methods.');
+});
