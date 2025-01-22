@@ -1,7 +1,12 @@
 <?php
+namespace App\Http\Controllers;
 
-require __DIR__.'/../public/index.php';
-// Load the Laravel application
-require __DIR__ . '/../vendor/autoload.php';
-$app = require_once __DIR__ . '/../bootstrap/app.php';
+use Illuminate\Routing\Controller as BaseController;
 
+class Controller extends BaseController
+{
+    public function welcome()
+    {
+        return view('welcome'); // Pastikan file 'welcome.blade.php' ada di folder 'resources/views'
+    }
+}
